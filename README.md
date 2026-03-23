@@ -1,7 +1,7 @@
 # ⏱️ Sistema de Fitxatge per a Restaurant
 
 > Solució pròpia per gestionar el fitxatge del personal, com a alternativa econòmica a eines com Factorial.  
-> Inclou un sistema de gamificació amb objectius econòmics per al personal en funció dels assoliments (arribar d'hora, cobertura de baixes, canvis de torn...).
+> M'agradaria incloure un sistema de gamificació amb objectius econòmics per al personal en funció dels assoliments (arribar d'hora, cobertura de baixes, canvis de torn...).
 
 ![Estat](https://img.shields.io/badge/estat-en%20desenvolupament-yellow)
 ![Java](https://img.shields.io/badge/Java-Spring%20Boot-brightgreen)
@@ -11,23 +11,25 @@
 
 ## 📌 Descripció
 
-**RestaurantTrack** és una aplicació de gestió de fitxatge desenvolupada amb **Java + Spring Boot**, creada a mida per a un restaurant amb l'objectiu de substituir eines de pagament com Factorial per una solució pròpia, econòmica i adaptada al negoci.
+La idea es fer una aplicació  que gestioni de fitxatge de personal de hosteleria de un restaurant de Mallorca. la desenvoluparia  amb **Java + Spring Boot**, la faria a mida per a un restaurant amb l'objectiu de substituir eines de pagament com Factorial per una solució pròpia, econòmica i adaptada al negoci.
 
 L'app permet al personal fitxar entrada i sortida des del seu dispositiu, mentre que el propietari disposa d'un panell d'administració per controlar horaris i jornades en temps real.
 
-A més del fitxatge, incorpora un **sistema de gamificació** basat en punts i objectius: els treballadors acumulen punts per comportaments positius com arribar puntual, fer hores extres o cobrir canvis de torn. Aquests punts es tradueixen en **plusos econòmics reals**, creant un incentiu directe per millorar el compromís i el rendiment de la plantilla — el treballador implicat veu com el seu sou base creix amb plusos, i el propietari aconsegueix menys problemes derivats de la gestió de personal gràcies a premiar el bon comportament.
+A més del fitxatge, m'agradaria incorporar un **sistema de gamificació** basat en punts i objectius: els treballadors acumulen punts per comportaments positius com arribar puntual, fer hores extres o cobrir canvis de torn. Aquests punts es tradueixen en **plusos econòmics reals**, creant un incentiu directe per millorar el compromís i el rendiment de la plantilla — el treballador implicat veu com el seu sou base creix amb plusos, i el propietari aconsegueix menys problemes derivats de la gestió de personal gràcies a premiar el bon comportament.
 
 ---
 
 ## 🎯 Objectius
 
 - Permetre als treballadors fitxar entrada i sortida des del seu dispositiu, web o tauleta d'empresa
-- Registrar i calcular automàticament les hores treballades
+- Registrar i calcular automàticament les hores treballades ( de pas gestionar hores extres )
 - Facilitar al gestor el control dels horaris i jornades
 - Reduir costos eliminant la dependència de software extern
 - Incentivar el bon comportament de la plantilla mitjançant punts i plusos econòmics
-- Exportació d'informes en PDF / Excel *(requisit legal)*
+- Exportació d'informes en PDF / Excel *(requisit legal si hi ha una inspecció)*
+- Guardar 4 anys les dades
 - Dashboard amb estadístiques per a l'administrador
+- Gestionar propines?
 
 ---
 
@@ -39,19 +41,22 @@ El registre horari és **obligatori per llei** a Espanya des del RDL 8/2019:
 - Conservar els registres durant un mínim de **4 anys**
 - Posar els registres a disposició de treballadors, sindicats i Inspecció de Treball
 - Garantir la **integritat i no manipulació** de les dades registrades
+- Si son manipulades per l'admin, que quedi registrat qui les manipula i a quina hora
 
 ---
 
 ## ⚙️ Funcionalitats principals
 
 ### 🔐 Rols i autenticació
-- Login d'usuaris amb JWT
+- Login d'usuaris 
 - Rol **ADMIN** (propietari): accés total al panell de gestió
-- Rol **EMPLOYEE** (treballador): fitxatge i consulta del propi historial
+- Rol **TREBALLADOR** : fitxatge i consulta del propi historial, hores extres, punts de gamificació, percentatges de objectius economics..
 
 ### 👥 Gestió d'usuaris *(ADMIN)*
 - Crear, editar i eliminar treballadors
 - Assignar i modificar rols
+- Modificar horaris
+- Metriques de hores extres, compliment d'objectius de cada treballador , etc..
 
 ### ⏱️ Fitxatge
 - Registrar hora d'entrada (`clock-in`)
